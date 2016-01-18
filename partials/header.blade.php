@@ -1,10 +1,10 @@
         <header data-target="header-position">
             <div class="row">
                 <div class="four columns">
-                    @if(@getimagesize(url( logo_image_url() )))
+                    @if( logo_image_url() )
                     <div id="logo">
                         <a href="{{url('home')}}">
-                            {{HTML::image(logo_image_url(), 'Logo', array('class'=>'logos'))}}
+                            {{HTML::image(logo_image_url(), 'Logo '.Theme::place('title'), array('class'=>'logos'))}}
                         </a>
                     </div>
                     @else

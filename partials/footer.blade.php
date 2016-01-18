@@ -97,21 +97,21 @@
                 @endforeach
                 <div class="three columns">
                     @foreach(list_banks() as $bank)
-                    {{HTML::image(bank_logo($bank), $bank->bankdefault->nama, array('title'=>'Payment'))}}
+                    {{HTML::image(bank_logo($bank), $bank->bankdefault->nama, array('title'=>$bank->bankdefault->nama))}}
                     @endforeach
                     @foreach(list_payments() as $pay)   
                         @if($pay->nama == 'paypal' && $pay->aktif == 1)
-                        <img src="{{url('img/bank/paypal.png')}}" alt="Paypal" title="Payment" />
+                        <img src="{{url('img/bank/paypal.png')}}" alt="Paypal" title="Paypal" />
                         @endif
                         @if($pay->nama == 'ipaymu' && $pay->aktif == 1) 
-                        <img src="{{url('img/bank/ipaymu.jpg')}}" alt="ipaymu" title="Payment" />
+                        <img src="{{url('img/bank/ipaymu.jpg')}}" alt="ipaymu" title="Ipaymu" />
                         @endif
                         @if($pay->nama == 'bitcoin' && $pay->aktif == 1)
-                        <img src="{{url('img/bitcoin.png')}}" alt="Bitcoin" title="Payment" />
+                        <img src="{{url('img/bitcoin.png')}}" alt="Bitcoin" title="Bitcoin" />
                         @endif
                     @endforeach
                     @if(count(list_dokus()) > 0 && list_dokus()->status == 1)
-                    <img src="{{url('img/bank/doku.jpg')}}" alt="Doku Payment" title="Payment">
+                    <img src="{{url('img/bank/doku.jpg')}}" alt="Doku Payment" title="Doku">
                     @endif
                 </div>
             </div>
