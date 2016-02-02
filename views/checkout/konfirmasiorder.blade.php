@@ -18,8 +18,8 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>{{$checkouttype==1 ? prefixOrder().$order->kodeOrder : prefixOrder().$order->kodePreorder}}</td>
-                        <td>{{$checkouttype==1 ? waktu($order->tanggalOrder) : waktu($order->tanggalPreorder)}}</td>
+                        <td>{{$checkouttype==1 ? prefixOrder().$order->kodeOrder : '-'}}</td>
+                        <td>{{$checkouttype==1 ? waktu($order->tanggalOrder) : '-')}}</td>
                         <td>
                             <ul>
                             @if ($checkouttype==1)
@@ -27,8 +27,7 @@
                                 <li class="detailorder">{{$detail->produk->nama}} {{$detail->opsiSkuId !=0 ? '('.$detail->opsisku['opsi1'].($detail->opsisku['opsi2'] != '' ? ' / '.$detail->opsisku['opsi2']:'').($detail->opsisku['opsi3'] !='' ? ' / '.$detail->opsisku['opsi3']:'').')':''}} - {{$detail->qty}}</li>
                                 @endforeach
                             @else
-                                <li class="detailorder">{{$order->preorderdata->produk->nama}} ({{$order->opsiSkuId==0 ? 'No Opsi' : $order->opsisku['opsi1'].($order->opsisku['opsi2']!='' ? ' / '.$order->opsisku['opsi2']:'').($order->opsisku['opsi3']!='' ? ' / '.$order->opsisku['opsi3']:'')}})
-                                 - {{$order->jumlah}}</li>
+                                -
                             @endif
                             </ul>
                         </td>
@@ -39,8 +38,6 @@
                             @else 
                                 @if($order->status < 2)
                                     {{price($order->total)}}
-                                @elseif(($order->status > 1 && $order->status < 4) || $order->status==7)
-                                    {{price($order->total - $order->dp)}}
                                 @else
                                     0
                                 @endif
@@ -63,24 +60,6 @@
                             @elseif($order->status==4)
                             <span class="label label-default">Batal</span>
                             @endif
-                        @else 
-                            @if($order->status==0)
-                            <span class="label label-warning">Pending</span>
-                            @elseif($order->status==1)
-                            <span class="label label-important">Konfirmasi DP diterima</span>
-                            @elseif($order->status==2)
-                            <span class="label label-info">DP terbayar</span>
-                            @elseif($order->status==3)
-                            <span class="label label-info">Menunggu pelunasan</span>
-                            @elseif($order->status==4)
-                            <span class="label label-info">Pembayaran lunas</span>
-                            @elseif($order->status==5)
-                            <span class="label label-success">Terkirim</span>
-                            @elseif($order->status==6)
-                            <span class="label label-default">Batal</span>
-                            @elseif($order->status==7)
-                            <span class="label label-info">Konfirmasi Pelunasan diterima</span>
-                            @endif
                         @endif  
                         </td>
                     </tr>
@@ -92,7 +71,7 @@
         <div class="twelve columns section">
             @if($order->jenisPembayaran==1)
             <div class="six columns respond">
-                @if($checkouttype==1)                         
+                @if($checkouttype == 1 && $order->status == 0)                         
                 {{-- */ $url = 'konfirmasiorder/' /* --}}
                 @else   
                 {{-- */ $url = 'konfirmasipreorder/' /* --}}
@@ -120,13 +99,7 @@
                     <li class="field">
                         <label class="mheight"> Jumlah:</label>
                         @if($checkouttype==1)        
-                        <input type="number" class="text input" id="search" placeholder="Jumlah dana yang ditransfer" name="jumlah" value="{{$order->total}}" required="required">
-                        @else
-                            @if($order->status < 2)
-                            <input class="text input" id="search" placeholder="jumlah yg terbayar" type="number" name="jumlah" value="{{$order->dp}}" required="required">
-                            @elseif(($order->status > 1 && $order->status < 4) || $order->status==7)
-                            <input class="text input" id="search" placeholder="jumlah yg terbayar" type="number" name="jumlah" value="{{$order->total - $order->dp}}" required="required">
-                            @endif
+                        <input type="number" class="text input" id="search" placeholder="Jumlah Transfer" name="jumlah" value="{{$order->total}}" required="required">
                         @endif
                     </li>
                 </ul>
