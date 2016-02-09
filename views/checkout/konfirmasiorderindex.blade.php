@@ -5,7 +5,7 @@
                 <div class="title"><h4>Konfirmasi Order</h4></div>
                 <div class="field row">
                     <div class="three columns tright">
-                        <label class="mheight" for="email"><strong>Kode Order</strong></label>
+                        <label class="mheight"><strong>Kode Order</strong></label>
                     </div>
                     <div class="nine columns">
                         <input class="text input" name="kodeorder" required="required" />

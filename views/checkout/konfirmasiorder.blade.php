@@ -69,9 +69,9 @@
         </div>
 
         <div class="twelve columns section">
-            @if($order->jenisPembayaran==1)
+            @if($order->jenisPembayaran==1 && $order->status == 0)
             <div class="six columns respond">
-                @if($checkouttype == 1 && $order->status == 0)                         
+                @if($checkouttype == 1)                         
                 {{-- */ $url = 'konfirmasiorder/' /* --}}
                 @else   
                 {{-- */ $url = 'konfirmasipreorder/' /* --}}
