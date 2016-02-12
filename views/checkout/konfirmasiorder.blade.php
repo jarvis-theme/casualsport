@@ -19,7 +19,7 @@
                 <tbody>
                     <tr>
                         <td>{{$checkouttype==1 ? prefixOrder().$order->kodeOrder : '-'}}</td>
-                        <td>{{$checkouttype==1 ? waktu($order->tanggalOrder) : '-')}}</td>
+                        <td>{{$checkouttype==1 ? waktu($order->tanggalOrder) : '-'}}</td>
                         <td>
                             <ul>
                             @if ($checkouttype==1)
@@ -71,7 +71,7 @@
         <div class="twelve columns section">
             @if($order->jenisPembayaran==1 && $order->status == 0)
             <div class="six columns respond">
-                @if($checkouttype == 1)                         
+                @if($checkouttype == 1) 
                 {{-- */ $url = 'konfirmasiorder/' /* --}}
                 @else   
                 {{-- */ $url = 'konfirmasipreorder/' /* --}}
@@ -98,7 +98,7 @@
                     </li>
                     <li class="field">
                         <label class="mheight"> Jumlah:</label>
-                        @if($checkouttype==1)        
+                        @if($checkouttype==1)  
                         <input type="number" class="text input" id="search" placeholder="Jumlah Transfer" name="jumlah" value="{{$order->total}}" required="required">
                         @endif
                     </li>

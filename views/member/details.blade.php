@@ -85,7 +85,7 @@
                                 @endif 
                             @endif
                             @if($pengaturan->checkoutType==1) 
-                                @if($item->status <= 1)
+                                @if($item->status < 1)
                                 <div class="metro rounded btn default">
                                     <a href="{{url('konfirmasiorder/'.$item->id)}}"><i class="icon-eye"></i></a>
                                 </div>
@@ -137,7 +137,7 @@
                 @else
                     <tr><td colspan="2">Inquiry anda masih kosong</td></tr>
                 @endif
-                </table>                
+                </table>
             @endif
         </div>
     </div>

@@ -3,12 +3,13 @@
         <h3 class="title">Produk Kami</h3>
     </div>
     <div class="row">
-        <div class="three columns sidenav">
+        <div class="three columns">
             <ul class="sidenav">
                 @foreach(main_menu()->link as $menus)
                 <li><a href="{{menu_url($menus)}}">{{$menus->nama}}</a></li>
                 @endforeach
             </ul>
+            <div class="powerup">{{pluginSidePowerup()}}</div>
         </div>
         <div class="nine columns section">
             <ul class="breadcrumbs">

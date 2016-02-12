@@ -4,12 +4,13 @@
     </div>
     <div class="row">
         <div class="row">
-            <div class="three columns sidenav">
+            <div class="three columns">
                 <ul class="sidenav">
                     @foreach(main_menu()->link as $menus)
                     <li><a href="{{menu_url($menus)}}">{{$menus->nama}}</a></li>
                     @endforeach
                 </ul>
+                <div class="powerup">{{pluginSidePowerup()}}</div>
             </div>
 
             <div class="nine columns section">
@@ -132,11 +133,11 @@
                                 </span>
                                 <div class="medium oval btn primary default">
                                     <a href="{{product_url($other)}}">Lihat</a>
-                                </div>            
+                                </div>
                             </div>
                         </div>
                         @endforeach
-                    </div>     
+                    </div>
                 </div>
                 @endif
             </div>

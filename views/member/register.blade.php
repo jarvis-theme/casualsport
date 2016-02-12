@@ -31,7 +31,7 @@
                 </div>
                 <div class="field row">
                     <div class="three columns tright">
-                      <label class="mheight" for="pass"><strong>Re-Type Password</strong></label>
+                      <label class="mheight" for="pass"><strong>Ulangi Password</strong></label>
                     </div>
                     <div class="nine columns">
                       <input class="text input" id="pass" type="password" name="password_confirmation" required />
@@ -42,7 +42,7 @@
                       <label class="mheight" for="country"><strong>Negara</strong></label>
                     </div>
                     <div class="nine columns">
-                        {{Form::select('negara',array('' => '-- Pilih Negara --') + $negara,Input::old('negara'),array('required', "id"=>"negara", "data-rel"=>"chosen", "class"=>"twelve columns text input"))}}
+                        {{Form::select('negara',array('' => '-- Pilih Negara --') + $negara, Input::old('negara'),array('required', "id"=>"negara", "data-rel"=>"chosen", "class"=>"twelve columns text input"))}}
                     </div>
                 </div>
                 <div class="field row">
@@ -58,7 +58,7 @@
                       <label class="mheight"><strong>Kota</strong></label>
                     </div>
                     <div class="nine columns">
-                        {{Form::select('kota',array('' => '-- Pilih Kota --') + $kota, Input::old("kota"),array('required', "id"=>"kota", "data-rel"=>"chosen", "class"=>"twelve columns text input"))}}
+                        {{Form::select('kota',array('' => '-- Pilih Kota --') + $kota, Input::old("kota"), array('required', "id"=>"kota", "data-rel"=>"chosen", "class"=>"twelve columns text input"))}}
                     </div>
                 </div>
                 <div class="field row">
@@ -66,7 +66,7 @@
                       <label class="mheight"><strong>Alamat</strong></label>
                     </div>
                     <div class="nine columns">
-                        <textarea class="input textarea" id="address" rows="3" name='alamat' required>{{Input::old("alamat")}}</textarea>
+                        <textarea class="input textarea" id="address" rows="3" name="alamat" required>{{Input::old("alamat")}}</textarea>
                     </div>
                 </div>
                 <div class="field row">
@@ -74,7 +74,7 @@
                       <label class="mheight"><strong>Kode Pos</strong></label>
                     </div>
                     <div class="nine columns">
-                      <input class="text input" type="number" name="kodepos" value='{{Input::old("kodepos")}}' />
+                      <input class="text input" type="number" name="kodepos" value="{{Input::old('kodepos')}}" />
                     </div>
                 </div>  
                 <div class="field row">
@@ -82,7 +82,7 @@
                       <label class="mheight"><strong>Telepon</strong></label>
                     </div>
                     <div class="nine columns">
-                      <input class="text input" type="number" name='telp' value='{{Input::old("telp")}}' required />
+                      <input class="text input" type="number" name="telp" value="{{Input::old('telp')}}" required />
                     </div>
                 </div>
                 <div class="field row">

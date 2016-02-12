@@ -34,7 +34,6 @@
                         </a>
                         @endif
                     </div>
-                    <p>{{--short_description($aboutUs[1]->isi,230)--}}</p>
                 </div>
                 <div class="five columns">
                     <h4>Newsletter</h4>

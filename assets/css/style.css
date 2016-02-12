@@ -2034,6 +2034,15 @@ footer .btn { float: right; }
 }
 .skiplink a i{color: #fff}.pretty button{color: #000 !important}article div.btn{ background: #ff3d3d !important; box-shadow: unset !important; border: transparent !important }article div.btn a{text-shadow: unset !important}
 article div.btn a:hover{background: #2e2e2e; border-radius: 4px}
+.powerup form input[type="submit"] {
+    background: #2e2e2e;
+    border: transparent;
+    padding: 5px;
+    border-radius: 3px;
+    margin-top: 5px;
+    color: #fff;
+}
+.powerup form input[type="submit"]:hover{opacity: 0.6}.last img{border-radius: 5px}.result{font-style: italic;}
 @media screen and (max-width: 320px) {
 	.inputsearch .fright{float: none}
 	.accounts{margin-top: 5px}

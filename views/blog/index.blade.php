@@ -27,7 +27,7 @@
             <br />
         @else
             <div class="row">
-                <article class="twelve columns"><p>Blog tidak ditemukan.</p></article>
+                <article class="twelve columns"><p class="result">Artikel masih kosong.</p></article>
             </div>
         @endif
         </div>
@@ -42,9 +42,9 @@
                     </li>
                 </form>
             </div>
-
+            @if(recentBlog()->count() > 0)
             <div class="widget">
-            <h4>Artikel Terbaru</h4>
+                <h4>Artikel Terbaru</h4>
                 <ul>
                     @foreach(recentBlog(null,5) as $artikel)
                     <li>
@@ -54,13 +54,15 @@
                     @endforeach
                 </ul>
             </div>
-
+            @endif
+            @if(list_blog_category()->count() > 0)
             <div class="widget">
                 <h4>Kategori</h4>
                 @foreach(list_blog_category() as $kat)
                 <span class="underline"><a href="{{blog_category_url($kat)}}">{{$kat->nama}}</a></span>&nbsp;&nbsp;
                 @endforeach 
             </div>
+            @endif
         </div>
     </div>
 </section>

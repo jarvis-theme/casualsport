@@ -1,10 +1,10 @@
 <section class="sectiondiv">
-	<div class="row">
-		<h3 class="title">Testimonial</h3>
-	</div>
-	<div class="row">
+    <div class="row">
+        <h3 class="title">Testimonial</h3>
+    </div>
+    <div class="row">
         @foreach(list_testimonial() as $testi)
-		<article class="col-lg-12" id="testimo">
+        <article class="col-lg-12" id="testimo">
             <h4><strong>{{$testi->nama}}</strong></h4>
             <p><i class="icon-calendar"></i> {{date("d M Y", strtotime($testi->updated_at))}}</p>
             {{short_description($testi->isi,400)}}
