@@ -13,7 +13,7 @@
                         @else
                         <a href="#">
                         @endif
-                            {{HTML::image(slide_image_url($slide->gambar),'Promo '.Theme::place('title'))}}
+                            {{HTML::image(slide_image_url($slide->gambar), $slide->title)}}
                         </a>
                     </div>
                 </li>

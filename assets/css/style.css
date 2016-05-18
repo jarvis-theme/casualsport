@@ -2043,6 +2043,26 @@ article div.btn a:hover{background: #2e2e2e; border-radius: 4px}
     color: #fff;
 }
 .powerup form input[type="submit"]:hover{opacity: 0.6}.last img{border-radius: 5px}.result{font-style: italic;}
+center#paypal button[type="submit"] {
+    background: #019CDE;
+    border: none;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+}
+center#paypal button[type="submit"]:hover { opacity: 0.6; cursor: pointer; }
+form[name="order"] > input[name="SAVE"] {
+	background: #B5062D; border: medium none; padding: 10px; border-radius: 5px; color: #fff;
+}
+form[name="order"] > input[name="SAVE"]:hover {
+	opacity: 0.8;
+	cursor: pointer;
+}
+.btn-veritrans { background: #00aee7; border: none; padding: 10px; border-radius: 5px; color: #fff }
+.btn-veritrans:hover { cursor: pointer; opacity: 0.7 }
+.table-responsive { overflow-x: auto; }
+
+
 @media screen and (max-width: 320px) {
 	.inputsearch .fright{float: none}
 	.accounts{margin-top: 5px}

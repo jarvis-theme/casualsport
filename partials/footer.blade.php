@@ -15,7 +15,7 @@
                         @endif
                         @if(!empty($kontak->gp))
                         <a href="{{url($kontak->gp)}}">
-                            <i class="icon-google-circles" title="Google+"></i>
+                            <i class="icon-gplus" title="Google+"></i>
                         </a>
                         @endif
                         @if(!empty($kontak->pt))
@@ -39,7 +39,7 @@
                     <h4>Newsletter</h4>
                     <form action="{{@$mailing->action}}" method="post" target="_blank">
                         <div class="append field">
-                            <input class="wide email input" type="email" placeholder="Masukkan email anda" {{ @$mailing->action==''?'disabled="disabled"':'' }} />
+                            <input class="wide email input" type="email" nama="email" placeholder="Masukkan email anda" {{ @$mailing->action==''?'disabled="disabled"':'' }} />
                             <div class="medium primary btn">
                                 <button type="submit" {{ @$mailing->action==''?'disabled style="cursor:default"':'' }}>Subscribe</button>
                             </div>
@@ -71,9 +71,11 @@
                         <li>
                            <i class="icon-mail"></i> {{$kontak->email}}
                         </li>
+                        @if(empty($kontak->ym))
                         <li>
                             <i class="icon-a"></i> {{ymyahoo($kontak->ym)}}
                         </li>
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -111,6 +113,9 @@
                     @endforeach
                     @if(count(list_dokus()) > 0 && list_dokus()->status == 1)
                     <img src="{{url('img/bank/doku.jpg')}}" alt="Doku Payment" title="Doku">
+                    @endif
+                    @if(count(list_veritrans()) > 0 && list_veritrans()->status == 1 && list_veritrans()->type == 1)
+                    <img src="{{url('img/bank/veritrans.png')}}" alt="Veritrans" title="Veritrans">
                     @endif
                 </div>
             </div>
