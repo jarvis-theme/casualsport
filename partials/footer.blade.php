@@ -98,7 +98,9 @@
                 @endforeach
                 <div class="three columns">
                     @foreach(list_banks() as $bank)
-                    {{HTML::image(bank_logo($bank), $bank->bankdefault->nama, array('title'=>$bank->bankdefault->nama))}}
+                        @if($bank->status == 1)
+                        {{HTML::image(bank_logo($bank), $bank->bankdefault->nama, array('title'=>$bank->bankdefault->nama))}}
+                        @endif
                     @endforeach
                     @foreach(list_payments() as $pay)   
                         @if($pay->nama == 'paypal' && $pay->aktif == 1)
@@ -128,4 +130,4 @@
                 </div>
             </div>
         </footer>
-        {{pluginPowerup()}}
+        {{pluginPowerup()}} 

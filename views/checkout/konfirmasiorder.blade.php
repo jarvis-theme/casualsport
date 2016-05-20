@@ -89,7 +89,7 @@
                             <label class="mheight"> Rekening Tujuan:</label>
                             <select name="bank" class="opsi" required="required">
                                 <option value="">-- Pilih Bank Tujuan --</option>
-                                @foreach (list_banks() as $bank)
+                                @foreach ($banktrans as $bank)
                                 <option value="{{$bank->id}}">{{$bank->bankdefault->nama}} - {{$bank->noRekening}} - A/n {{$bank->atasNama}}</option>
                                 @endforeach
                             </select>
