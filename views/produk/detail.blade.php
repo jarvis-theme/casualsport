@@ -11,6 +11,31 @@
                     @endforeach
                 </ul>
                 <div class="powerup">{{pluginSidePowerup()}}</div>
+                <div class="side-title">
+                    <h5>Produk Terlaris</h5>
+                </div>
+                @if(best_seller()->count() > 0)
+                <div class="aside">
+                    @foreach(best_seller() as $best)
+                    <div class="side-thumb">
+                        <a href="{{product_url($best)}}">
+                            <div class="img-block">
+                                {{HTML::image(product_image_url($best->gambar1,'thumb'),$best->nama)}}
+                            </div>
+                            <p>{{short_description($best->nama, 25)}}</p>
+                            <p>{{price($best->hargaJual)}}</p> 
+                        </a>
+                    </div>
+                    @endforeach
+                </div>
+                @endif
+                @foreach(vertical_banner() as $banners)
+                <div class="center">
+                    <a href="{{url($banners->url)}}">
+                        {{HTML::image(banner_image_url($banners->gambar),'Info Promo',array('class'=>'img-responsive'))}} 
+                    </a>
+                </div>
+                @endforeach
             </div>
 
             <div class="nine columns section">
@@ -59,11 +84,11 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="seven columns section productdetail">
+                    <div class="seven columns section productdetail center">
                         <div class="title">
                             <h4>{{$produk->nama}}</h4>
                         </div>
-                        <p class="price">
+                        <p class="price center">
                             @if(!empty($produk->hargaCoret))
                             <del><span class="amount">{{price($produk->hargaCoret)}}</span></del>
                             @endif
@@ -87,7 +112,7 @@
                                 @endif
                             </div>
                             <li class="append field">
-                                <input class="narrow text input" type="number" step="1" min="1" placeholder="1" name="qty" value="1" />
+                                <input class="narrow text input" type="number" step="1" min="1" placeholder="1" name="qty" value="1" pattern="[0-9]" />
                                 <div class="medium primary btn icon-left icon-basket"><button type="submit">Add to cart</button></div>
                             </li>
                         </form>
@@ -120,7 +145,7 @@
                                 <img src="{{url(product_image_url($other->gambar1,'medium'))}}" alt="{{$other->nama}}" />
                             </a>
                             <div class="product-detail">
-                                <h4 class="title"><a href="{{product_url($other)}}">{{short_description($other->nama,15)}}</a></h4>
+                                <h4 class="title"><a href="{{product_url($other)}}">{{short_description($other->nama,12)}}</a></h4>
                                 @if(is_outstok($other))
                                 <span class="empty">Kosong</span>
                                 @elseif(is_terlaris($other))

@@ -16,19 +16,19 @@
                     @endif
                 </div>
                 <div class="four columns">
-                    <form action="{{url('search')}}" class="append field inputsearch" method="post" role="search">  
+                    <form action="{{url('search')}}" class="append field inputsearch" method="post" role="search">
                         <input class="wide input" type="text" placeholder="Cari Produk" name="search" required />
                         <button class="adjoined icon-left icon-search" type="submit">Cari</button>
                     </form>
                 </div>
 
                 <div class="four columns inputsearch">
-                    <div class="metro rounded btn default fright" id="shoppingcartplace">
+                    <div class="metro rounded btn default fright mb10" id="shoppingcartplace">
                         {{shopping_cart()}}
                     </div>
 
                     @if(!is_login())
-                    <div class="fright accounts">
+                    <div class="fright accounts mt0">
                         <div class="metro rounded btn default fright" id="toplogin">
                             <a href="{{url('member')}}">Login</a>
                         </div>
@@ -37,7 +37,7 @@
                         </div>
                     </div>
                     @else
-                    <div class="fright accounts">
+                    <div class="fright accounts mt0">
                         <div class="metro rounded btn default fright toprightlogin">
                             <a href="{{url('logout')}}">Logout</a>
                         </div>
@@ -57,20 +57,20 @@
                     <ul class="nav">
                     @if(count(category_menu()) > 0)
                     {{-- */ $counts = 0; /* --}}
-                    @foreach(category_menu() as $menu)  
+                    @foreach(category_menu() as $menu)
                         @if($counts < 5)
-                            @if($menu->parent == '0') 
+                            @if($menu->parent == '0')
                             <li>
                                 <a href="{{category_url($menu)}}">{{$menu->nama}}</a>
                                 @if(count($menu->anak) > 0)
                                 <div class="dropdown">
                                     <ul>
-                                    @foreach($menu->anak as $submenu)   
-                                        @if($submenu->parent == $menu->id)  
+                                    @foreach($menu->anak as $submenu)
+                                        @if($submenu->parent == $menu->id)
                                         <li>
                                             <a href="{{category_url($submenu)}}">{{$submenu->nama}}</a>
-                                            @foreach($submenu->anak as $submenu2)  
-                                                @if($submenu2->parent == $submenu->id)  
+                                            @foreach($submenu->anak as $submenu2)
+                                                @if($submenu2->parent == $submenu->id)
                                                 <div class="dropdown">
                                                     <ul>
                                                         <li>
@@ -93,6 +93,6 @@
                     @endforeach 
                     @endif
                     </ul>
-                </nav> 
+                </nav>
             </div>
         </div>

@@ -10,7 +10,7 @@
             </ul>
         </div>
         <div class="nine columns section">
-            {{Form::open(array('url'=>'member/update','method'=>'put','class'=>'form-horizontal'))}}
+            {{Form::open(array('url'=>'member/update','method'=>'put','class'=>'form-horizontal profil'))}}
                 <div class="field row">
                     <label class="mheight" for="nama"><strong>Nama</strong></label>
                     <input class="five columns text input" id="inputName" type="text" value="{{$user->nama}}" name="nama" placeholder="Nama" required />
@@ -26,7 +26,14 @@
                 <div class="field row">
                     <label class="mheight" for="country"><strong>Negara</strong></label>
                     <div>
-                        {{Form::select('negara',array('' => '-- Pilih Negara --') + $negara, ($user ? $user->negara :(Input::old("negara")? Input::old("negara") :"")), array('required'=>'', 'id'=>'negara', 'class'=>'five columns text input'))}}
+                        <select class="five columns text input" name="negara" id="negara" data-rel="chosen" required>
+                            <option selected>-- Pilih Negara --</option>
+                            @foreach ($negara as $key=>$item)
+                                @if(strtolower($item)=='indonesia')
+                                <option value="1" {{$user->negara==1 || Input::old("negara")==1 ? 'selected' : ''}}>{{$item}}</option>
+                                @endif
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="field row">

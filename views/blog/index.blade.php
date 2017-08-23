@@ -10,7 +10,7 @@
                 <article class="twelve columns">
                     <h3><a href="{{blog_url($blogs)}}">{{$blogs->judul}}</a></h3>
                     <div class="meta">
-                        <i class="icon-calendar"></i> {{date("d F Y", strtotime($blogs->updated_at))}} <i class="icon-folder"></i>
+                        <i class="icon-calendar"></i> {{date("d F Y", strtotime($blogs->created_at))}} <i class="icon-folder"></i>
                         @if(!empty($blogs->kategori->nama))
                         <a href="{{blog_category_url(@$blogs->kategori)}}">{{@$blogs->kategori->nama}}</a>
                         @endif

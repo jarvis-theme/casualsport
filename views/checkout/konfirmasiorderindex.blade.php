@@ -8,7 +8,7 @@
                         <label class="mheight"><strong>Kode Order</strong></label>
                     </div>
                     <div class="nine columns">
-                        <input class="text input" name="kodeorder" required="required" />
+                        <input class="text input" name="kodeorder" required="required" autofocus />
                     </div>
                 </div>
                 <div class="field row">

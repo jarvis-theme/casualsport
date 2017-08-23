@@ -65,7 +65,7 @@
                     </span>
                     <div class="medium oval btn primary default">
                         <a href="{{product_url($new_produk)}}">Lihat</a>
-                    </div>            
+                    </div>
                 </div>
             </div>
             @endforeach

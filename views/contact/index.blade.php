@@ -1,6 +1,6 @@
 <section class="sectiondiv">
     <div class="row">
-        <h3 class="title"><i class="icon-mail"></i> Hubungi <span>Kami</span></h3>
+        <h3 class="title"><i class="icon-mail"></i> Hubungi Kami</h3>
     </div>
     <div class="row">
         <div class="row section">
@@ -30,11 +30,11 @@
                         <div class="pretty medium default btn">
                             <button type="reset">Reset</button>
                         </div>
-                    </form>     
+                    </form>
                 </div>
             </div>
             <div class="six columns">
-                <div class="title"><h4>Alamat</h4></div>
+                <div class="title mt20"><h4>Alamat</h4></div>
                 <div class="address">
                     <address>
                         <strong>{{$kontak->nama}}</strong><br>

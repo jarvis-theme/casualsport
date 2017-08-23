@@ -6,7 +6,7 @@
         @foreach(list_testimonial() as $testi)
         <article class="col-lg-12" id="testimo">
             <h4><strong>{{$testi->nama}}</strong></h4>
-            <p><i class="icon-calendar"></i> {{date("d M Y", strtotime($testi->updated_at))}}</p>
+            <p><i class="icon-calendar"></i> {{date("d M Y", strtotime($testi->created_at))}}</p>
             {{short_description($testi->isi,400)}}
             <br><hr>
         </article>

@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="six columns">
-            <div class="title">
+            <div class="title mt20">
                 <h4>Member Baru</h4>
             </div>
             <p>

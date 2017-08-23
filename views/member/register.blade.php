@@ -42,7 +42,14 @@
                       <label class="mheight" for="country"><strong>Negara</strong></label>
                     </div>
                     <div class="nine columns">
-                        {{Form::select('negara',array('' => '-- Pilih Negara --') + $negara, Input::old('negara'),array('required', "id"=>"negara", "data-rel"=>"chosen", "class"=>"twelve columns text input"))}}
+                        <select class="twelve columns text input" name="negara" id="negara" data-rel="chosen" required>
+                            <option selected>-- Pilih Negara --</option>
+                            @foreach ($negara as $key=>$item)
+                                @if(strtolower($item)=='indonesia')
+                                <option value="1" {{Input::old('negara')==1 ? 'selected' : ''}}>{{$item}}</option>
+                                @endif
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="field row">

@@ -22,7 +22,7 @@
                             <th>Total Order</th>
                             <th>No. Resi</th>
                             <th>Status</th>
-                            <th>Konfirmasi</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>

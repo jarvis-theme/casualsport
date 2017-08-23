@@ -2060,8 +2060,37 @@ form[name="order"] > input[name="SAVE"]:hover {
 }
 .btn-veritrans { background: #00aee7; border: none; padding: 10px; border-radius: 5px; color: #fff }
 .btn-veritrans:hover { cursor: pointer; opacity: 0.7 }
-.table-responsive { overflow-x: auto; }
-
+.mt0 { margin-top: 0 !important; }
+.mt10 { margin-top: 10px; }
+.mt20 { margin-top: 20px; }
+.mt30 { margin-top: 30px; }
+.mb0 { margin-bottom: 0; }
+.mb10 { margin-bottom: 10px; }
+.mb20 { margin-bottom: 20px; }
+.side-title {
+	background: #2e2e2e;
+	color: #fff;
+	padding: 16px 20px;
+}
+.side-title h5 { color: #fff; }
+.img-block {
+	float: left;
+	margin-right: 20px;
+	clear: both;
+}
+.side-thumb {
+	margin-bottom: 20px;
+	min-height: 75px;
+	clear: both;
+}
+.side-thumb p {
+	font-size: 14px;
+	margin: 0;
+}
+.center { text-align: center; }
+#addorder .btn.primary { border: none; }
+.midtrans { padding: 8px; background: #fafafa; }
+.append .btn { border: none; }
 
 @media screen and (max-width: 320px) {
 	.inputsearch .fright{float: none}
@@ -2071,6 +2100,17 @@ form[name="order"] > input[name="SAVE"]:hover {
 	.inputsearch #shoppingcartplace{float: none}
 	.accounts{width: 50%;display: inline-block;float: left !important}
 }
+@media (max-width: 767px) {
+	.profil .field .input { padding: 0 10px; width: 100% !important; }
+	.profil .field select { max-width: 100%; }
+}
+@media only screen and (max-width: 768px) {
+	aside.footer-menu ul,
+	aside.footer-menu h4 { text-align: center; }
+}
 @media screen and (min-width: 768px) and (max-width: 979px) {
 	.accounts{margin-top: 5px}
+}
+@media (max-width: 1120px) {
+	.table-responsive { overflow-x: auto; }
 }

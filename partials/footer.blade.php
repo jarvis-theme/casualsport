@@ -80,7 +80,7 @@
                 </div>
             </div>
         </aside>
-        <aside class="last">
+        <aside class="last footer-menu">
             <div class="row">
                 @foreach(all_menu() as $group)
                 <div class="three columns">
@@ -102,11 +102,11 @@
                         {{HTML::image(bank_logo($bank), $bank->bankdefault->nama, array('title'=>$bank->bankdefault->nama))}}
                         @endif
                     @endforeach
-                    @foreach(list_payments() as $pay)   
+                    @foreach(list_payments() as $pay)
                         @if($pay->nama == 'paypal' && $pay->aktif == 1)
                         <img src="{{url('img/bank/paypal.png')}}" alt="Paypal" title="Paypal" />
                         @endif
-                        @if($pay->nama == 'ipaymu' && $pay->aktif == 1) 
+                        @if($pay->nama == 'ipaymu' && $pay->aktif == 1)
                         <img src="{{url('img/bank/ipaymu.jpg')}}" alt="ipaymu" title="Ipaymu" />
                         @endif
                         @if($pay->nama == 'bitcoin' && $pay->aktif == 1)
@@ -117,7 +117,7 @@
                     <img src="{{url('img/bank/doku.jpg')}}" alt="Doku Payment" title="Doku">
                     @endif
                     @if(count(list_veritrans()) > 0 && list_veritrans()->status == 1 && list_veritrans()->type == 1)
-                    <img src="{{url('img/bank/veritrans.png')}}" alt="Veritrans" title="Veritrans">
+                    <img class="midtrans" src="{{url('img/bank/midtrans.png')}}" alt="Midtrans" title="Midtrans">
                     @endif
                 </div>
             </div>

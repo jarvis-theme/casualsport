@@ -96,7 +96,7 @@
                         </li>
                         <li class="field">
                             <label class="mheight"> Jumlah:</label>
-                            @if($checkouttype==1)  
+                            @if($checkouttype==1)
                             <input type="number" class="text input" id="search" placeholder="Jumlah Transfer" name="jumlah" value="{{$order->total}}" required="required">
                             @endif
                         </li>
