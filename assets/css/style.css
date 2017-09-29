@@ -2091,6 +2091,9 @@ form[name="order"] > input[name="SAVE"]:hover {
 #addorder .btn.primary { border: none; }
 .midtrans { padding: 8px; background: #fafafa; }
 .append .btn { border: none; }
+.blog-img { margin-top: 10px; }
+.picmix { padding: 10px; }
+.picmix img { width: 30px; }
 
 @media screen and (max-width: 320px) {
 	.inputsearch .fright{float: none}

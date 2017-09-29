@@ -15,6 +15,7 @@
                         <a href="{{blog_category_url(@$blogs->kategori)}}">{{@$blogs->kategori->nama}}</a>
                         @endif
                     </div>
+                    <img src="{{ imgString($blogs->isi) }}" class="blog-img" />
                     <p>{{short_description($blogs->isi,300)}}</p>
                     <div class="pretty medium default btn"><a href="{{blog_url($blogs)}}">Baca Selengkapnya <i class="icon-right-open"></i> </a></div>
                 </article>

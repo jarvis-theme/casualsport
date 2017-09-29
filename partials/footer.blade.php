@@ -4,33 +4,38 @@
                     <h4 class="title">{{short_description(Theme::place('title'),23)}}</h4>
                     <div class="social">
                         @if(!empty($kontak->fb))
-                        <a href="{{url($kontak->fb)}}">
+                        <a href="{{url($kontak->fb)}}" target="_blank">
                             <i class="icon-facebook" title="Facebook"></i>
                         </a>
                         @endif
                         @if(!empty($kontak->tw))
-                        <a href="{{url($kontak->tw)}}">
+                        <a href="{{url($kontak->tw)}}" target="_blank">
                             <i class="icon-twitter" title="Twitter"></i>
                         </a>
                         @endif
                         @if(!empty($kontak->gp))
-                        <a href="{{url($kontak->gp)}}">
+                        <a href="{{url($kontak->gp)}}" target="_blank">
                             <i class="icon-gplus" title="Google+"></i>
                         </a>
                         @endif
                         @if(!empty($kontak->pt))
-                        <a href="{{url($kontak->pt)}}">
+                        <a href="{{url($kontak->pt)}}" target="_blank">
                             <i class="icon-pinterest" title="Pinterest"></i>
                         </a>
                         @endif
                         @if(!empty($kontak->ig))
-                        <a href="{{url($kontak->ig)}}">
+                        <a href="{{url($kontak->ig)}}" target="_blank">
                             <i class="icon-instagram" title="Instagram"></i>
                         </a>
                         @endif
                         @if(!empty($kontak->tl))
-                        <a href="{{url($kontak->tl)}}">
+                        <a href="{{url($kontak->tl)}}" target="_blank">
                             <i class="icon-tumblr" title="Tumblr"></i>
+                        </a>
+                        @endif
+                        @if(!empty($kontak->picmix))
+                        <a href="{{url($kontak->picmix)}}" class="picmix" title="Picmix" target="_blank">
+                            <img src="//d3kamn3rg2loz7.cloudfront.net/blogs/event/icon-picmix.png">
                         </a>
                         @endif
                     </div>
@@ -73,7 +78,7 @@
                         </li>
                         @if(empty($kontak->ym))
                         <li>
-                            <i class="icon-a"></i> {{ymyahoo($kontak->ym)}}
+                            <i class="icon-a"></i> {{$kontak->ym}}
                         </li>
                         @endif
                     </ul>
